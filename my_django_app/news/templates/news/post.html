@@ -1,0 +1,9 @@
+{% extends 'main/layout.html' %}
+{% block title %}{{ post.title }}{%endblock%}
+
+{% block content%}
+    <div class="features">
+        <h1>{{post.title}}</h1>
+        <p>{{post.is_published}}</p>
+    </div>
+{% endblock %}

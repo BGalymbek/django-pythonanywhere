@@ -1,0 +1,32 @@
+{% extends 'main/layout.html' %}
+{% load static %}
+
+{% block title %}{{ qundylyq.food_title }}{%endblock%}
+
+{% block content %}
+    <div class="features">
+        <h1>{{ qundylyq.food_title }} құндылығы</h1>
+        <table class="table table-striped">
+            <thead>
+              <tr>
+                <th scope="col">Аты</th>
+                <th scope="col">~Өлшемі~</th>
+            </tr>
+            </thead>
+            <tbody>
+              <tr>
+                <th scope="row">Ақуыз</th>
+                <td>{{ qundylyq.aquz }}</td>
+              </tr>
+              <tr>
+                <th scope="row">Май</th>
+                <td>{{ qundylyq.mai }}</td>
+              </tr>
+              <tr>
+                <th scope="row">Көмірсутек</th>
+                <td>{{ qundylyq.ksutek }}</td>
+              </tr>
+            </tbody>
+        </table>
+    </div>
+{% endblock %}

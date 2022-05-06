@@ -1,0 +1,40 @@
+{% extends 'main/layout.html' %}
+
+{% block title %}Про нас{%endblock%}
+
+{% block content %}
+<div class="features">
+    <h1>Біз жайлы</h1>
+    <div class="alert alert-info">
+        <p>Аты-жөні: Батырбек Ғалымбек</p>
+        <p>ID:200103023</p>
+        <p>Байланыс телефоны: +7(707)-411-36-64</p>
+    </div>
+
+    <h5 class="alert alert-info">Біздің сайтқа тағам түрін қосқыныз келсе менюдағы<br><span style="color:red">"Тағам қосу"</span> батырмасын басып қоссаныз болады.</h5>
+</div>
+<header>
+	<h1>Contact us</h1>
+</header>
+
+<div id="form">
+
+<div class="fish" id="fish"></div>
+<div class="fish" id="fish2"></div>
+
+<form method="post">
+    {% csrf_token %}
+<div class="formgroup" id="email-form">
+    <label for="email">Taqyryp</label>
+    {{form.subject}}
+</div>
+
+<div class="formgroup" id="message-form">
+    <label for="message">Comment</label>
+    {{form.content}}
+</div>
+
+	<input type="submit" value="Send your message!" />
+</form>
+</div>
+{% endblock %}

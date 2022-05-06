@@ -1,0 +1,12 @@
+{% extends 'main/layout.html' %}
+{% load static %}
+
+{% block title %}{{ quram.name }}{%endblock%}
+
+{% block content %}
+    <div class="features">
+        <h1>{{ quram.name }} құрамы</h1>
+        <p class="alert alert-success">{{ quram.qurams }}</p>
+        <a href="{% url 'qundylyq' quram.id %}" class="btn btn-info">Құндылығы</a>
+    </div>
+{% endblock %}

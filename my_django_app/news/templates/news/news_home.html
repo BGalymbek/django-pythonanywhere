@@ -1,0 +1,41 @@
+{% extends 'main/layout.html' %}
+{% load static %}
+
+{% block title %}Тағам түрлері{%endblock%}
+
+{% block content %}
+    <div class="features">
+        <h1>Тағам түрлері</h1>
+        <div class="menu-grid">
+
+        {% if news %}
+
+            {% for el in news %}
+                <div class="alert alert-primary news_home">
+                    {% if el.video %}
+                    <video class="embed-responsive embed-responsive-16by9" controls="controls">
+                        <source src="{{ el.video.url }}" type="video/mp4" />
+                    </video>
+                    {% else %}
+                    <img src="{{ el.imgs.url }}" class="foodimg" alt="imgs"><br><br>
+                    {% endif %}
+                    <h3>{{ el.title }}</h3>
+                    <p>{{ el.anons }}</p>
+                    <a href="{% url 'news-detail' el.id %}" class="btn btn-primary">Толық сипаттамасын көру</a>
+                </div>
+            {% endfor %}
+        {% else %}
+            <p>У вас нет записей!</p>
+        {% endif %}
+        </div>
+    </div>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/2.2.0/jquery.min.js">
+        $('.features', this).each(function() {
+        // найти высоту элемента
+        var height = $(this).height();
+        //  присвоить эту высоту всем элементам с классом live_view.
+        $('.aside').css('height', height);
+});
+
+    </script>
+{% endblock %}
